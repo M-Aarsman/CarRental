@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "0fbe7ed3-fc6a-44c2-9a15-432d192c9053",
+		"name": "CarRental",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAnyCars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cars/available?start=2026-04-20T10:00:00&days=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"available"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2026-04-20T10:00:00"
+						},
+						{
+							"key": "days",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTypesCars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cars/available?start=2026-04-20T10:00:00&days=3&types=SUV",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"available"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2026-04-20T10:00:00"
+						},
+						{
+							"key": "days",
+							"value": "3"
+						},
+						{
+							"key": "types",
+							"value": "SUV"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSpecificCar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cars/available?start=2026-04-20T10:00:00&days=3&carId=11111111-1111-1111-1111-111111111114",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"available"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2026-04-20T10:00:00"
+						},
+						{
+							"key": "days",
+							"value": "3"
+						},
+						{
+							"key": "carId",
+							"value": "11111111-1111-1111-1111-111111111114"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSpecificCar EXP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cars/available?start=2023-04-20T10:00:00&days=3&carId=11111111-1111-1111-1111-111111111166",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"available"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2023-04-20T10:00:00"
+						},
+						{
+							"key": "days",
+							"value": "3"
+						},
+						{
+							"key": "carId",
+							"value": "11111111-1111-1111-1111-111111111166"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReserveType",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"carType\": \"SUV\",\n    \"customerName\": \"Anna Kowalska\",\n    \"email\": \"anna.kowalska@example.com\",\n    \"licenseNumber\": \"XYZ12345\",\n    \"start\": \"2026-04-20T10:00:00\",\n    \"days\": 3\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reserve exact Car",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"carId\": \"11111111-1111-1111-1111-111111111111\",\n    \"customerName\": \"Anna Kowalska\",\n    \"email\": \"anna.kowalska@example.com\",\n    \"licenseNumber\": \"XYZ12345\",\n    \"start\": \"2026-04-20T10:00:00\",\n    \"days\": 3\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel reservation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reservations/dc7f56e4-af71-4f84-874a-08e4583bbb25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservations",
+						"dc7f56e4-af71-4f84-874a-08e4583bbb25"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
