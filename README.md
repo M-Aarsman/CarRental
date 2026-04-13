@@ -55,7 +55,7 @@ flowchart TD
     N --> O[Save reservation]
     O --> P[Return ReservationResponse]
 
-    B -->|DELETE /reservations/{id}| Q[ReservationService.cancelReservation]
+    B -->|DELETE reservations by id| Q[ReservationService.cancelReservation]
     Q --> R[Load reservation]
     R --> S{Status}
     S -->|RESERVED| T[Set CANCELLED and save]
